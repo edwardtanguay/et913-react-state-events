@@ -4,6 +4,7 @@ import { VariableWrapper } from "./components/VariableWrapper";
 function App() {
 	const [firstName, setFirstName] = useState("Roger");
 	const [randomNumber, setRandomNumber] = useState(Math.random());
+	const [isOnline, setIsOnline] = useState(false);
 
 	console.log('in app: ' + Math.random());
 
@@ -19,6 +20,11 @@ function App() {
 			<VariableWrapper>
 				<button onClick={() => setRandomNumber(Math.random())}>Change</button>
 				<p className="text-2xl">Random number: {randomNumber}</p>
+			</VariableWrapper>
+
+			<VariableWrapper>
+				<button onClick={() => setIsOnline(!isOnline)}>Change</button>
+				<p className="text-2xl">{isOnline ? 'user is online' : 'user is OFFLINE'}</p>
 			</VariableWrapper>
 
 		</>
